@@ -32,7 +32,7 @@ spec:
             - 
               name: MYSQL_DATABASE
               value: drupal-database
-          image: "mysql:last"
+          image: "mysql:latest"
           name: cont-drupal-mysql
           ports: 
             - 
