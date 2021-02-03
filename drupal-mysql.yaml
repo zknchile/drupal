@@ -32,7 +32,7 @@ spec:
             - 
               name: MYSQL_DATABASE
               value: drupal-database
-          image: "mysql:latest"
+          image: "mysql:5.7"
           name: cont-drupal-mysql
           ports: 
             - 
@@ -49,4 +49,3 @@ spec:
           name: vol-drupal
           persistentVolumeClaim: 
             claimName: drupal-pvc-mysql
-
