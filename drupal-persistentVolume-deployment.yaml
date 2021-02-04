@@ -51,24 +51,21 @@ spec:
     spec:
       initContainers:
         - name: init-sites-volume
-          image: drupal:fpm-alphine
+          image: drupal:latest
           command: ['/bin/bash', '-c']
           args: ['cp -r /var/www/html/sites /data; chown www-data:www-data /data/ -R']
           volumeMounts:
           - mountPath: /data
             name: drupal-pvc
       containers:
-      - image: drupal:fpm-alphine
+      - image: drupal:latest
         imagePullPolicy: IfNotPresent
         name: drupal
         env:
         - name: DRUPAL_DATABASE_HOST
           value: drupal-mysql
         - name: DRUPAL_DATABASE_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
+          value: Tisal2020
         ports:
         - containerPort: 80
           name: drupal

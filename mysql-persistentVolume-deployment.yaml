@@ -52,10 +52,7 @@ spec:
         - name: MYSQL_DATABASE
           value: drupal-db
         - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
+          value: Tisal2020
         ports:
         - containerPort: 3306
           name: mysql
